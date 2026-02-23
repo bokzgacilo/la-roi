@@ -88,8 +88,8 @@
     }
 
     .header .subtitle {
-      font-family: var(--font-sans);
-      font-size: 15px;
+      font-family: 'Space Grotesk' !important;
+      font-size: 16px;
       font-weight: 400;
       color: var(--text-muted);
       max-width: 560px;
@@ -125,16 +125,16 @@
     .card,
     .results-card,
     .roi-card {
-      background: var(--card);
+      background: #ffe5d3;
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 32px;
     }
 
     .card-title {
-      font-family: var(--font-card-title);
-      font-size: 18px;
-      font-weight: 400;
+      font-family: 'Libre Baskerville' !important;
+      font-size: 24px;
+      font-weight: 500;
       margin-bottom: 28px;
       color: var(--text-dark);
     }
@@ -151,7 +151,7 @@
     .input-group label {
       display: block;
       font-family: var(--font-card-body);
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -169,7 +169,7 @@
     .input-suffix {
       position: absolute;
       font-family: var(--font-card-body);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       color: var(--text-dim);
       pointer-events: none;
@@ -212,7 +212,7 @@
 
     .input-hint {
       font-family: var(--font-card-body);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 400;
       color: var(--text-dim);
       margin-top: 4px;
@@ -253,7 +253,8 @@
       -webkit-appearance: none;
       width: 20px;
       height: 20px;
-      background: var(--accent-rose);
+      background: black;
+      /* background: var(--accent-rose); */
       border-radius: 50%;
       border: 3px solid var(--card);
       box-shadow: 0 1px 6px rgba(232, 153, 141, 0.35);
@@ -398,15 +399,14 @@
     .roi-table {
       width: 100%;
       border-collapse: collapse;
-      font-family: var(--font-card-body);
-      font-size: 13px;
+      font-family: 'Space Grotesk' !important;
+      font-size: 16px;
     }
 
     .roi-table th {
       text-align: right;
       padding: 10px 12px;
       font-weight: 600;
-      font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -490,7 +490,7 @@
 
     .summary-box .sb-value {
       font-family: var(--font-card-body);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--green-bright);
     }
@@ -502,8 +502,8 @@
     /* ─── ASSUMPTIONS ─── */
     .assumptions {
       margin-top: 24px;
-      padding: 18px 22px;
-      background: var(--bg-deep);
+      padding: 18px 24px;
+      background: #fed8bdd9;
       border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: 10px;
       opacity: 0;
@@ -511,8 +511,7 @@
     }
 
     .assumptions h3 {
-      font-family: var(--font-sans);
-      font-size: 10px;
+      font-family: var(--font-card-body);
       font-weight: 600;
       letter-spacing: 1.8px;
       text-transform: uppercase;
@@ -521,7 +520,7 @@
     }
 
     .assumptions p {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.7;
     }
@@ -529,7 +528,7 @@
     /* ─── FOOTER ─── */
     .footer {
       text-align: center;
-      margin-top: 48px;
+      margin-top: 3rem;
       opacity: 0;
       animation: fadeUp 0.6s ease forwards 0.8s;
     }
@@ -538,12 +537,12 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 500;
+      font-family: 'Space Grotesk';
+      font-size: 16px;
       color: var(--text-dark);
       background: transparent;
       text-decoration: none;
+      margin: 2rem 0;
       padding: 12px 28px;
       border: 1.5px solid var(--text-dark);
       border-radius: 50px;
@@ -556,15 +555,13 @@
     }
 
     .footer .tagline {
-      font-family: var(--font-serif);
-      font-weight: 500;
-      font-size: 15px;
+      font-family: 'Libre Baskerville' !important;
+      font-size: 24px;
       color: var(--text-dark);
-      margin-top: 20px;
     }
 
     .footer .credit {
-      font-size: 11px;
+      font-size: 14px;
       color: var(--text-dim);
       margin-top: 6px;
     }
@@ -580,17 +577,47 @@
         transform: translateY(0);
       }
     }
+
+    .logo-header-container {
+      padding: 1rem;
+      position: fixed;
+      display: flex;
+      justify-content: flex-start;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      width: 100%;
+      background-color: rgb(254, 239, 219);
+      transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* When NOT at the top */
+    .logo-header-container.scrolled {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari */
+      background-color: rgba(254, 239, 219, 0.85);
+      /* Slight transparency needed for blur */
+    }
+
+    .site-title {
+      font-family: 'Libre Baskerville' !important;
+    }
   </style>
 </head>
 
-<body>
+<body style="background-color:rgb(254, 239, 219) ;">
   <div class="container">
-
-    <div class="header">
-      <div class="brand">Kasama Digital</div>
-      <h1>Shop Pay <em>Revenue Impact</em> Model</h1>
-      <p class="subtitle">Enter your storefront metrics below to model the revenue, margin, and 3-year ROI impact of
-        adding Shop Pay Commerce Components to your SFCC site.</p>
+    <div class="logo-header-container">
+      <a href="https://kasamadigital.com/" target="_blank" class="logo-header">
+        <img src="./logo.png" alt="logo" width="86px">
+      </a>
+    </div>
+    <div class="header" style="margin-top: 5rem;">
+      <h1 class="site-title">Shop Pay <em>Revenue Impact</em> Model</h1>
+      <p class="subtitle" style="margin-top: 4rem;">Enter your storefront metrics below to model the revenue, margin,
+        and 3-year ROI impact of
+        adding Shop Pay Commerce components to your ecommerce site.</p>
     </div>
 
     <div class="main-grid">
@@ -1058,7 +1085,15 @@
       document.getElementById('sumNetBen').textContent = fmtM(netBenefits3yr);
       document.getElementById('sumPayback').textContent = totalPayback > 0 ? totalPayback.toFixed(1) + ' mo' : '—';
     }
+    const header = document.querySelector('.logo-header-container');
 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
     calculate();
   </script>
 </body>
